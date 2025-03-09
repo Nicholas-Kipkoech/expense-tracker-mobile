@@ -1,6 +1,9 @@
+import { ThemedText } from "@/components/ThemedText";
+import { useNotification } from "@/context/NotificationContext";
 import { Image, StyleSheet, Text, View } from "react-native";
 
-const index = () => {
+const HomeScreen = () => {
+  const { notification, expoPushToken, error } = useNotification();
   return (
     <View style={styles.container}>
       <Image
@@ -23,12 +26,21 @@ const index = () => {
         <View>
           <Text>Slide to view</Text>
         </View>
+        <ThemedText type="subtitle" style={{ color: "red" }}>
+          Your push token:
+        </ThemedText>
+        <ThemedText>{expoPushToken}</ThemedText>
+        <ThemedText type="subtitle">Latest notification:</ThemedText>
+        <ThemedText>{notification?.request.content.title}</ThemedText>
+        <ThemedText>
+          {JSON.stringify(notification?.request.content.data, null, 2)}
+        </ThemedText>
       </View>
     </View>
   );
 };
 
-export default index;
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {
