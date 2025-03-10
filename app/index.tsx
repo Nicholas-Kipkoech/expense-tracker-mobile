@@ -1,6 +1,6 @@
-import { ThemedText } from "@/components/ThemedText";
 import { useNotification } from "@/context/NotificationContext";
-import { Image, StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const HomeScreen = () => {
   const { notification, expoPushToken, error } = useNotification();
@@ -23,18 +23,20 @@ const HomeScreen = () => {
             income
           </Text>
         </View>
-        <View>
-          <Text>Slide to view</Text>
-        </View>
-        <ThemedText type="subtitle" style={{ color: "red" }}>
-          Your push token:
-        </ThemedText>
-        <ThemedText>{expoPushToken}</ThemedText>
-        <ThemedText type="subtitle">Latest notification:</ThemedText>
-        <ThemedText>{notification?.request.content.title}</ThemedText>
-        <ThemedText>
-          {JSON.stringify(notification?.request.content.data, null, 2)}
-        </ThemedText>
+        <TouchableOpacity
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: 60,
+            borderRadius: 8,
+            backgroundColor: "#EF6756",
+          }}
+        >
+          <Text style={{ color: "white", fontSize: 16, fontWeight: "700" }}>
+            Explore
+          </Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -54,8 +56,10 @@ const styles = StyleSheet.create({
   },
   wallpaper: {
     resizeMode: "cover",
-    height: 100,
-    width: 100,
+    height: 300,
+    width: 300,
+    borderRadius: 300,
+    marginTop: 40,
   },
   intro: {
     height: 300,
@@ -66,7 +70,7 @@ const styles = StyleSheet.create({
     padding: 20,
     display: "flex",
     flexDirection: "column",
-    gap: 20,
+    gap: 40,
     alignContent: "center",
   },
   introTitleBox: {
@@ -83,5 +87,6 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignContent: "center",
+    marginTop: 10,
   },
 });
