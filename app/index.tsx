@@ -1,9 +1,10 @@
-import { useNotification } from "@/context/NotificationContext";
+import { useRouter } from "expo-router";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const HomeScreen = () => {
-  const { notification, expoPushToken, error } = useNotification();
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       <Image
@@ -32,6 +33,7 @@ const HomeScreen = () => {
             borderRadius: 8,
             backgroundColor: "#EF6756",
           }}
+          onPress={() => router.push("/login")}
         >
           <Text style={{ color: "white", fontSize: 16, fontWeight: "700" }}>
             Explore
