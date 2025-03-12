@@ -1,3 +1,4 @@
+import { useRouter } from "expo-router";
 import {
   StyleSheet,
   Text,
@@ -7,6 +8,8 @@ import {
 } from "react-native";
 
 const Login = () => {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}></View>
@@ -18,7 +21,10 @@ const Login = () => {
           secureTextEntry
         />
 
-        <TouchableOpacity style={styles.signInBtn}>
+        <TouchableOpacity
+          style={styles.signInBtn}
+          onPress={() => router.push("/home")}
+        >
           <Text
             style={{
               color: "white",

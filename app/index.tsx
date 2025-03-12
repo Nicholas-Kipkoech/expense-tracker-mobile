@@ -33,7 +33,7 @@ const HomeScreen = () => {
             borderRadius: 8,
             backgroundColor: "#EF6756",
           }}
-          onPress={() => router.push("/login")}
+          onPress={() => router.push("/auth/login")}
         >
           <Text style={{ color: "white", fontSize: 16, fontWeight: "700" }}>
             Explore
