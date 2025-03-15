@@ -28,14 +28,12 @@ const ExpenseTotal = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1, // Ensure SafeAreaView takes full height
-  },
+  container: {},
   overlay: {
     backgroundColor: "#6674D3",
     padding: 20,
     borderRadius: 10,
-    width: "90%", // Use percentage for responsiveness
+    width: "100%",
     height: 120,
     display: "flex",
     flexDirection: "column",

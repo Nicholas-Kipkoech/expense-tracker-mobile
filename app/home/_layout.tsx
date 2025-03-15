@@ -58,6 +58,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 20,
     bottom: Platform.OS === "ios" ? 120 : 80, // Adjust based on tab bar height
-    backgroundColor: "#EE6856",
+    backgroundColor: "white",
   },
 });

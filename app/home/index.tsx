@@ -9,6 +9,7 @@ import {
   View,
 } from "react-native";
 import ExpenseTotal from "../components/expense-total";
+import ExpenseList from "../components/expense-list";
 
 const Home = () => {
   return (
@@ -19,7 +20,6 @@ const Home = () => {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "space-between",
-          marginRight: 20,
         }}
       >
         <View style={styles.profileContainer}>
@@ -31,8 +31,8 @@ const Home = () => {
         </View>
         <TouchableOpacity
           style={{
-            height: 25,
-            width: 50,
+            height: 30,
+            width: 80,
             display: "flex",
             borderRadius: 8,
             backgroundColor: "#6674D3",
@@ -47,6 +47,7 @@ const Home = () => {
       {/* Expense total component here */}
 
       <ExpenseTotal />
+      <ExpenseList />
     </SafeAreaView>
   );
 };
